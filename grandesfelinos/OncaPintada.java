@@ -12,6 +12,9 @@ import java.lang.StringBuilder;
  */
 
 public class OncaPintada extends Panthera implements Procriacao{
+    private static int nextId=1;
+    
+    private int id;
     public String nome;
     public String pai;
     public String mae;
@@ -23,6 +26,11 @@ public class OncaPintada extends Panthera implements Procriacao{
     private StringBuilder builder = new StringBuilder();
     private Random rand = new Random();
 //    private boolean isGravida=false;
+    
+    public int getId(){
+        return this.id;
+    }
+    
     public String getNome(){
         return this.nome;
     }
@@ -97,6 +105,7 @@ public class OncaPintada extends Panthera implements Procriacao{
         this.sexo=sexo;
     }
     public OncaPintada(){
+        this.id= nextId++;
         this.idade=0;
         this.pelagem="Amarela clara com Rosetas castanhas e avermelhadas";
         forcaMordida=2000;
@@ -179,17 +188,10 @@ public class OncaPintada extends Panthera implements Procriacao{
                 
                 
                 
+                
         
                     
         }
-                
-//            for (String alelos : alelosCriaPossiveis) {
-//                System.out.format("Lista dos genóticos de pelagem possiveis: %s\n", alelos );
-//            }
-
-//              for(int i=0;i<alelosCriaPossiveis.size();i++){
-//                  System.out.format("Lista dos genóticos de pelagem possiveis:s\n", alelosCriaPossiveis.get(i));
-//              }          
             //armazenar possibilidades no array, escolha aleatoria de uma das possibilidades considerando a probabilidade e escolha randomica de genero
 
          else{
